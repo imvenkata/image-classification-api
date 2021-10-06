@@ -10,7 +10,10 @@ app_desc = """<h2>Try this app by uploading any image with `predict/image`</h2>
 
 app = FastAPI(title='Image classification API', description=app_desc)
 
+
 @app.get("/", include_in_schema=False)
+
+
 async def index():
     return RedirectResponse(url="/docs")
 
@@ -25,4 +28,15 @@ async def predict_image(file: bytes = File(...)):
 if __name__ == "__main__":
     uvicorn.run(app, port=5000, debug=True)
 
+
 #uvicorn main:app   
+
+#-----------curl-----------------------------
+#curl -X 'POST' \
+#  'http://127.0.0.1:5000/api/predict/' \
+#  -H 'accept: application/json' \
+#  -H 'Content-Type: multipart/form-data' \
+#  -F 'file=@image0.png;type=image/png'
+
+
+
