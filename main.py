@@ -25,8 +25,8 @@ async def predict_image(file: bytes = File(...)):
     prediction = cl.predict(image)
     return prediction
 
-if __name__ == "__main__":
-    uvicorn.run(app, port=5000, debug=True)
+#if __name__ == "__main__":
+ #   uvicorn.run(app, port=5000, debug=True)
 
 
 #uvicorn main:app   
