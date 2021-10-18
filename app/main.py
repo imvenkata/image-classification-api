@@ -1,5 +1,8 @@
 import uvicorn
 from fastapi import FastAPI, File, UploadFile
+import sys
+sys.path.append('.')
+
 from src.model import imageClassifier
 import tensorflow as tf
 from starlette.responses import RedirectResponse
